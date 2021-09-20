@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home_work_3</title>
+</head>
+
+<body>
+    <!-- Задание 1: С помощью цикла while вывести все простые числа в промежутке от 0 до 100. -->
+    <script type="text/javascript">
+        let i = 5;
+        let n = 1;
+        x = i % n;
+        if (i == n && x == 0) {
+            alert('число ' + i + ' простое.');
+        } else if (n == 1 && x == 0) {
+            alert('число ' + i + ' простое.');
+        } else if (x != 0) {
+            alert('число ' + i + ' простое.');
+        } else if (i != n && n != 1 && x == 0) alert('число' + i + 'сложное');
+    </script>
+    <!-- Задание 2,3:С этого урока начинаем работать с функционалом интернет-магазина. Предположим, есть сущность корзины. Нужно реализовать функционал подсчета стоимости корзины в зависимости от находящихся в ней товаров:
+   - Товары в корзине хранятся в массиве. Задачи:
+    a) Организовать такой массив для хранения товаров в корзине;
+    b) Организовать функцию countBasketPrice, которая будет считать стоимость корзины. -->
+    <script type="text/javascript">
+        let products = [{
+            title: 'product:1',
+            price: 200,
+            count: 2
+        }, {
+            title: 'product:1',
+            price: 350,
+            count: 5
+        }, {
+            title: 'product:1',
+            price: 130,
+            count: 4
+        }];
+
+        function f(mas) {
+            let s = 0;
+            for (let x of mas) {
+                s = s + x.count;
+            }
+            return s;
+        }
+
+        function countBasketPrice(mas) {
+            let n = 0;
+            for (let x of mas) {
+                n = n + (x.count * x.price);
+            }
+            return n;
+        }
+        alert('Всего товаров в корзине ' + f(products) + 'шт, на сумму:' + countBasketPrice(products) + 'р');
+    </script>
+    <!-- Задание 4*. Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла. -->
+    <script type="text/javascript">
+        let i;
+        for (i = 0; i < 10; i++) {
+            console.log(i);
+        }
+    </script>
+    <!-- Задание 5*. Нарисовать пирамиду с помощью console.log, как показано на рисунке, только у вашей пирамиды должно быть 20 рядов, а не 5: -->
+    <script type="text/javascript">
+        let arr = [];
+        let end = 0;
+        while (end < 20) {
+            end++;
+            arr.push('x');
+            console.log(arr);
+        }
+    </script>
+
+
+</body>
+
+</html>
