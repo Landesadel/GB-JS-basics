@@ -2,7 +2,8 @@ let question;
 let n;
 let arrAnswers = [];
 
-do {
+
+do { //начало игры
     n = false;
     question = +prompt(questionText.z00 + questionText.z1 + questionText.z2);
     if (question == -1) {
@@ -19,20 +20,21 @@ switch (question) {
             if (question == -1) {
                 break;
             } else if (question == 1) {
+                arrAnswers.unshift(question); //Добавление ответа в начало массива
                 alert('Ответ не верный!');
-                //сюда вставить присвоение ответа к массиву
+
                 break;
             } else if (question == 2) {
+                arrAnswers.unshift(question); //Добавление ответа в начало массива
                 alert('Ответ не верный!');
-                //сюда вставить присвоение ответа к массиву
                 break;
             } else if (question == 3) {
+                arrAnswers.unshift(question); //Добавление ответа в начало массива
                 alert('Ответ  верный!');
-                //сюда вставить присвоение ответа к массиву
                 break;
             } else if (question == 4) {
+                arrAnswers.unshift(question); //Добавление ответа в начало массива
                 alert('Ответ не верный!');
-                //сюда вставить присвоение ответа к массиву
                 break;
             } else {
                 n = isAnswer(questionText.a0, question)
@@ -50,20 +52,20 @@ switch (question) {
                     if (question == -1) {
                         break;
                     } else if (question == 1) {
+                        arrAnswers.unshift(question); //Добавление ответа в начало массива
                         alert('Ответ верный!');
-                        //сюда вставить присвоение ответа к массиву
                         break;
                     } else if (question == 2) {
+                        arrAnswers.unshift(question); //Добавление ответа в начало массива
                         alert('Ответ не верный!');
-                        //сюда вставить присвоение ответа к массиву
                         break;
                     } else if (question == 3) {
+                        arrAnswers.unshift(question); //Добавление ответа в начало массива
                         alert('Ответ не верный!');
-                        //сюда вставить присвоение ответа к массиву
                         break;
                     } else if (question == 4) {
+                        arrAnswers.unshift(question); //Добавление ответа в начало массива
                         alert('Ответ не верный!');
-                        //сюда вставить присвоение ответа к массиву
                         break;
                     } else {
                         n = isAnswer(questionText.b0, question)
@@ -81,37 +83,57 @@ switch (question) {
                             if (question == -1) {
                                 break;
                             } else if (question == 1) {
+                                arrAnswers.unshift(question); //Добавление ответа в начало массива
                                 alert('Ответ верный!');
-                                //сюда вставить присвоение ответа к массиву
                                 break;
                             } else if (question == 2) {
+                                arrAnswers.unshift(question); //Добавление ответа в начало массива
                                 alert('Ответ не верный!');
-                                //сюда вставить присвоение ответа к массиву
                                 break;
                             } else if (question == 3) {
+                                arrAnswers.unshift(question); //Добавление ответа в начало массива
                                 alert('Ответ не верный!');
-                                //сюда вставить присвоение ответа к массиву
                                 break;
                             } else if (question == 4) {
+                                arrAnswers.unshift(question); //Добавление ответа в начало массива
                                 alert('Ответ не верный!');
-                                //сюда вставить присвоение ответа к массиву
                                 break;
                             } else {
-                                n = isAnswer(questionText.c0, question)
+                                n = isAnswer(questionText.c0, question);
                             }
                         } while (!n);
-                        switch (question) {
+                        switch (question) { //Проверка своих ответов
                             case 1:
                             case 2:
                             case 3:
                             case 4:
                                 alert('Спасибо за игру!');
-                                //Добавить вывод ответов из массива и  вывод: правильный\неправильный ответ
+                                for (step = 0;;) {
+                                    let s;
+                                    s = +prompt('Для просмотра ответа на вопрос - введите номер вопроса\n' + 'Для выхода введите \"-1\"');
+                                    if (s == -1) {
+                                        break;
+                                    }
+                                    do {
+                                        if (s == 1) {
+                                            alert('Ваш ответ на 1-й вопрос:' + arrAnswers[0]);
+                                        } else if (s == 2) {
+                                            alert('Ваш ответ на 2-й вопрос:' + arrAnswers[1]);
+                                        } else if (s == 3) {
+                                            alert('Ваш ответ на 3-й вопрос:' + arrAnswers[2]);
+                                        } else {
+                                            s = isAnswer(3, s)
+                                        }
+
+                                    } while (!s);
+
+                                }
+
                         }
                 }
         }
 }
-
+//проверка числа
 function isAnswer(i, event) {
     if (isNaN(event) || !isFinite(event)) {
         alert('Вы ввели недопустимый символ');
@@ -122,4 +144,3 @@ function isAnswer(i, event) {
     }
     return true;
 }
-//Добавить функцию вывода ответов в массив
