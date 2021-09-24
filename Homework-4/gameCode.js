@@ -116,11 +116,11 @@ switch (question) {
                                     }
                                     do {
                                         if (s == 1) {
-                                            alert('Ваш ответ на 1-й вопрос:' + arrAnswers[0]);
+                                            alert('Ваш ответ на 1-й вопрос:' + arrAnswers[2]);
                                         } else if (s == 2) {
                                             alert('Ваш ответ на 2-й вопрос:' + arrAnswers[1]);
                                         } else if (s == 3) {
-                                            alert('Ваш ответ на 3-й вопрос:' + arrAnswers[2]);
+                                            alert('Ваш ответ на 3-й вопрос:' + arrAnswers[0]);
                                         } else {
                                             s = isAnswer(3, s)
                                         }
