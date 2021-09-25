@@ -120,10 +120,10 @@ switch (question) {
                                                 questionText.a00 + '\':' + arrAnswers[0]);
                                         } else if (s == 2) {
                                             alert('Ваш ответ на 2-й вопрос\'' +
-                                                questionText.a00 + '\':' + arrAnswers[1]);
+                                                questionText.b00 + '\':' + arrAnswers[1]);
                                         } else if (s == 3) {
                                             alert('Ваш ответ на 3-й вопрос \'' +
-                                                questionText.a00 + '\':' + arrAnswers[2]);
+                                                questionText.c00 + '\':' + arrAnswers[2]);
                                         } else {
                                             s = isAnswer(3, s)
                                         }
