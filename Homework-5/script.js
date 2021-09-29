@@ -3,6 +3,10 @@ function drawChessBoard() {
     let flag = true;
     let trr = document.createElement('tr');
     let arrLetter = [' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+    blackFigs1 = ['&#9820;', '&#9822;', '&#9821;', '&#9819;', '&#9818;', '&#9821;', '&#9822;', '&#9820;'],
+        whiteFigs1 = ['&#9814;', '&#9816;', '&#9815;', '&#9813;', '&#9812;', '&#9815;', '&#9816;', '&#9814;'],
+        blackFigs2 = ['&#9823;', '&#9823;', '&#9823;', '&#9823;', '&#9823;', '&#9823;', '&#9823;', '&#9823;'],
+        whiteFigs2 = ['&#9817;', '&#9817;', '&#9817;', '&#9817;', '&#9817;', '&#9817;', '&#9817;', '&#9817;'];
     // Первый ряд букв
     let trtop = document.createElement('tr');
     for (let l = 0; l < 9; l++) {
@@ -36,15 +40,37 @@ function drawChessBoard() {
             let td = document.createElement('td');
             if (flag) {
                 td.className = 'block';
-                td.style.background = 'black';
+                td.style.background = '#5f4d25';
             } else {
-                td.style.background = 'white';
+                td.style.background = '#c9b894';
                 td.className = 'block';
             }
             tr.appendChild(td);
             flag = !flag;
 
+            switch (i) { //Заполняем фигуры в ячейки по строкам
+
+                case 0:
+                    td.innerHTML = blackFigs1[j];
+                    td.className = 'block figstyle';
+                    break;
+                case 1:
+                    td.innerHTML = blackFigs2[j];
+                    td.className = 'block figstyle';
+                    break;
+                case 6:
+                    td.innerHTML = whiteFigs2[j];
+                    td.className = 'block figstyle';
+                    break;
+                case 7:
+                    td.innerHTML = whiteFigs1[j];
+                    td.className = 'block figstyle';
+                    break;
+            }
+
         }
+
+
         //второй столбик цифр
         let tdnum2 = document.createElement('td');
         tdnum2.innerHTML = 8 - i;
