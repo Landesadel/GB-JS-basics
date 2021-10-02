@@ -1,0 +1,10 @@
+body {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+img {
+    width: 30%;
+    border: 7px ridge #833212;
+}
