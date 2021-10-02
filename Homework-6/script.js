@@ -16,5 +16,8 @@ function checkBigImg(eventObject) {
     let src = 'big_img/' + imgPartsName + '.jpg';
     let imgDomElem = document.createElement('img');
     imgDomElem.src = src;
+    imgDomElem.onerror = function() {
+        alert('Ups! We can\'t find this photo!');
+    }
     checkBlockDiv.appendChild(imgDomElem);
 }
