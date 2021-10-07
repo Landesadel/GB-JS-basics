@@ -48,3 +48,7 @@ td.game-table-cell {
 .show_score {
     margin-left: 10px;
 }
+
+.obstacle-unit {
+    background-color: #6e6d6d;
+}
